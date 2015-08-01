@@ -1,6 +1,20 @@
 <div id='container'>
-<!-- Your code here -->
-
+  <!-- <div ng-controller='ShortenController' > -->
+    <h2>Add yo link, dawg</h2>
+    <form name="shorten" ng-submit='addLink()'>
+      <input type='text' ng-model='link.url'>
+      <button>add</button>
+    </form>
+<!--   </div> -->
 </div>
 
 
+<!-- <div id='signup'>
+  <h1>signup</h1>
+  <form name="signupForm" ng-submit='signup()'>
+    <input type='text' ng-model='user.username'>
+    <input type="password" ng-model='user.password'>
+    <button>signup</button>
+  </form>
+  <a href="#/signin">Already have an account? <strong>Signin</strong> ...</a>
+</div> -->

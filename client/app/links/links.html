@@ -1,9 +1,10 @@
 <div id='container'>
   <!-- Your html here -->
     <h2>Links</h2>
-    <ul>
-      <li ng-repeat="link in data.links track by $index">
-        {{link.url}}
-      </li>
-    </ul>
+      <div ng-repeat="data in data.links track by $index">
+        <div class='url'>{{data.url}}</div>
+        <div class="title"> {{data.title}} </div>
+        <a href='{{data.base_url}}/api/links/{{data.code}}'>{{data.base_url}}/{{data.code}}</a>
+
+      </div>
 </div>

@@ -1,10 +1,20 @@
 <div id='container'>
   <!-- Your html here -->
-    <h2>Links</h2>
-      <div ng-repeat="data in data.links track by $index">
-        <div class='url'>{{data.url}}</div>
-        <div class="title"> {{data.title}} </div>
-        <a href='{{data.base_url}}/api/links/{{data.code}}'>{{data.base_url}}/{{data.code}}</a>
+  <div class='navigation'>
+    <ul>
+      <li><a href='http://localhost:3000/#/links' class='index'>All Links</a></li>
+      <li><a href='http://localhost:3000/#/shorten' class='create'>Shorten</a></li>
+    </ul>
+  </div>
+  
+  <h2>Links</h2>
+  <form name="filter" > 
+    <input type="text" ng-model="searchText">
+  </form>
+  <div ng-repeat="data in data.links | filter:searchText">
+    <div class="title"> {{data.title}} </div>
+    <div class='url'>{{data.url}}</div>
+    <a href='{{data.base_url}}/api/links/{{data.code}}'>{{data.base_url}}/{{data.code}}</a>
 
-      </div>
+  </div>
 </div>
